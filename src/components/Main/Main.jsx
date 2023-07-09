@@ -15,7 +15,7 @@ import "aos/dist/aos.css";
 const Main = (props) => {
   // const Data = props.landmarks;
   const { landmarks } = useLandmarkContext();
-  console.log(landmarks);
+  // console.log(landmarks);
   useEffect(() => {
     aos.init({ duration: 1500 });
   }, []);

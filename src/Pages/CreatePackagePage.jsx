@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import MultiStepForm from "../components/Forms/MultiStepForm";
 import { string, object, date, number, array } from "yup";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import { useCategoriesContext } from "../contexts/CategoriesContext";
 import axios from "axios";
 import api_root from "../axios";
@@ -12,6 +13,7 @@ import api_root from "../axios";
 const CreatePackagePage = () => {
   const { t } = useTranslation();
   const { tourismCategories } = useCategoriesContext();
+  const navigate = useNavigate();
   // const { updateState } = useAlertContext();
   // alert(JSON.stringify(tourismCategories));
   // const [tourPackage, setTourPackage] = useState(null);
@@ -233,7 +235,9 @@ const CreatePackagePage = () => {
           instance: createPackageData?.title,
         })
       );
+
       setSubmitting(false);
+      navigate(`/TourPackage/${createPackageData?.id}`);
       // setCreating(false);
     } catch (error) {
       if (axios.isCancel(error)) {

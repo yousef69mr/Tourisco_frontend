@@ -21,9 +21,15 @@
 2. add Categories , Tour Packages Contexts
 3. add reusable Slider
 
-
 #### 0.5.1 version:
-1. add create package page 
+
+1. add create package page
 2. add create landmark form UI only
 3. create dynamic swiper component
 4. modify auth context data
+
+### 0.6 version:
+
+1. Add Landmarks Details Page
+2. modify routing for single pages
+3. fix bugs

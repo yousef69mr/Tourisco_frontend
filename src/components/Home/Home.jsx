@@ -8,11 +8,15 @@ import { FiFacebook } from "react-icons/fi";
 import { FaTripadvisor } from "react-icons/fa";
 import { TbApps } from "react-icons/tb";
 import { BsListTask } from "react-icons/bs";
-import { t } from "i18next";
+import { useNavigate } from "react-router";
+
 import aos from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
   useEffect(() => {
     aos.init({ duration: 2000 });
   }, []);
@@ -57,9 +61,12 @@ const Home = () => {
               <input type="range" max="5000" min="100" />
             </div>
           </div>
-          <div className={`${css.searchOptions} flex`}>
+          <div
+            onClick={() => navigate(`/TourPackage`)}
+            className={`${css.searchOptions} flex`}
+          >
             <HiFilter className={css.icon} />
-            <span>More Filters</span>
+            <span>{t("more", { instance: t("filters") })}</span>
           </div>
         </div>
         <div data-aos="fade-up" className={`${css.homeFooterIcons} flex`}>

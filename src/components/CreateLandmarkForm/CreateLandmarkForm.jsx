@@ -8,6 +8,7 @@ import MultiStepForm from "../Forms/MultiStepForm";
 import { capitalizeString } from "../../utils/StringFormattor";
 import { useGovernorateContext } from "../../contexts/GovernorateContext";
 import { useLanguageContext } from "../../contexts/LanguageContext";
+import { useNavigate } from "react-router";
 
 const CreateLandmarkForm = (props) => {
   const { t } = useTranslation();
@@ -22,6 +23,8 @@ const CreateLandmarkForm = (props) => {
   // const [panel, setPanel] = useState(false);
   // const [creating, setCreating] = useState(false);
   // const formName = formName;
+
+  const navigate = useNavigate();
 
   const tourism_categories = tourismCategories?.map((instance) =>
     Object.assign({
@@ -554,6 +557,7 @@ const CreateLandmarkForm = (props) => {
       // );
 
       setSubmitting(false);
+      navigate(`landamrk/${landmarkData[0]?.landmark?.id}`);
       // setCreating(false);
     } catch (error) {
       if (axios.isCancel(error)) {

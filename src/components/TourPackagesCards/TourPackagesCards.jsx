@@ -38,7 +38,7 @@ function TourPackagesCards() {
       </div>
     
        <div className={css.cards_container}>
-          {tourPackages.map((TourPackages, index) => (
+          {tourPackages?.map((TourPackages, index) => (
             <React.Fragment key={TourPackages.id}>
               <div className={css.flip_card}>
                 <div className={css.flip_card_inner}>

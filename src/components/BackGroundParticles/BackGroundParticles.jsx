@@ -112,7 +112,7 @@ const BackGroundParticles = () => {
             enable: true,
             outMode: "out",
             random: false,
-            speed: 2,
+            speed: 1,
             straight: false,
           },
           number: {
@@ -120,8 +120,8 @@ const BackGroundParticles = () => {
               enable: true,
               area: 800,
             },
-            limit: 45,
-            value: 30,
+            limit: 20,
+            value: 10,
           },
           opacity: {
             animation: {

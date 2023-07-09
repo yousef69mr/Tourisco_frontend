@@ -10,6 +10,8 @@
   "readMore": "Read More",
   "landmark": "landmark",
   "create": "create {{instance}}",
+  "more": "More {{instance}}",
+  "filters": "filters",
   "ERA": [
     { "key": " Before Christ (B.C.)", "value": "BC" },
     { "key": "Anno Domini (A.D.)", "value": "AD" }
@@ -36,7 +38,7 @@
     "aboutus": "About Us",
     "contact": "Contact",
     "landmarks": "Landmarks",
-    "Tour Packages":"Tour Packages"
+    "Tour Packages": "Tour Packages"
   },
   "Map_section": {
     "welcome_message": "Welcome To Egypt",
@@ -311,72 +313,63 @@
     ],
     "loading": "Loading...",
     "submit": "Create Landmark"
-  }
+  },
 
-  ,"sideNavigation":{
-    "Filters":"Filters",
-    "Rate":"Rate",
+  "sideNavigation": {
+    "Filters": "Filters",
+    "Rate": "Rate",
     "Is Active": "Is Active",
     "Active Only": "Active Only",
-    "Search By Name":"Search By Name",
-    "Search":"Search",
-    "Category":"Category",
-    "Type Category":"Type Category",
-    "All Categories":"All Categories"
-  }
+    "Search By Name": "Search By Name",
+    "Search": "Search",
+    "Category": "Category",
+    "Type Category": "Type Category",
+    "All Categories": "All Categories"
+  },
 
-  ,"LandMarksCards":{
-    "LandMarks":"LandMarks ",
-    "Read More":"Read More",
-    "From":"From"
+  "LandMarksCards": {
+    "LandMarks": "LandMarks ",
+    "Read More": "Read More",
+    "From": "From"
+  },
 
-  
-  }
+  "LandmarkInfo": {
+    "About": "About ",
+    "area": "area",
+    "Locates": "Locates",
+    "founder ": "founder ",
+    "KM": "KM"
+  },
 
-  ,"LandmarkInfo":{
-    "About":"About ",
-    "area":"area",
-    "Locates":"Locates",
-    "founder ":"founder ",
-    "KM":"KM" 
-    
+  "LandmarkEvent": {
+    "LandMark Event": "LandMark Event",
+    "Event Ticket": "Event Ticket",
+    "Ticket Price": "Ticket Price",
+    "AM": "AM",
+    "PM": "PM",
+    "From": "From",
+    "To": "To",
+    "EG": "EG "
+  },
+  "GovernmentCards": {
+    "Governorates": "Governorates ",
+    "Read More": "Read More"
+  },
 
+  "GovernmentInfo": {
+    "About": "About ",
+    "area": "area ",
+    "KM": "KM",
+    "governor": "governor",
+    "Governorate": "Governorate",
+    "LandMarks Found in": "LandMarks Found in"
+  },
+  "Gallery": {
+    "Gallery": "Gallery "
+  },
 
-  }
-
-
-
-  ,"LandmarkEvent":{
-    "LandMark Event":"LandMark Event",
-    "Event Ticket":"Event Ticket",
-    "Ticket Price":"Ticket Price",
-    "AM":"AM",
-    "PM":"PM",
-    "From":"From",
-    "To":"To",
-    "EG":"EG "
-  }
-  ,"GovernmentCards":{
-    "Governorates":"Governorates ",
-    "Read More":"Read More"
-    
-  
-  }
-
-  ,"GovernmentInfo":{
-    "About":"About ",
-    "area":"area ",
-    "KM":"KM" ,
-    "governor":"governor",
-    "Governorate":"Governorate",
-    "LandMarks Found in":"LandMarks Found in"
-  }
-  ,"Gallery":{
-    "Gallery":"Gallery "
-  }
-
-  ,"LandmarkReviews":{
-    "Reviews":"Reviews ",
-    "Rate":"Rate "
+  "LandmarkReviews": {
+    "Reviews": "Reviews ",
+    "Rate": "Rate "
   }
 }

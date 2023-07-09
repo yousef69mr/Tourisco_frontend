@@ -20,6 +20,7 @@ import GovernmentInfoPage from './Pages/GovInfoPage';
 import TourPackageContextProvider from './contexts/TourPackageContext';
 import TourPackagesPage from './Pages/TourPackagesPage';
 import TourPackagesInfoPage from './Pages/TourPackageInfoPage';
+import AddReview from './components/AddReview/AddReview';
 //import CategoriesContextProvider from './contexts/CategoriesContext';
 
 //dynamic import
@@ -99,69 +100,69 @@ const App = () => {
           } />
 
 
-<Route path='/landmarks' element={
-             <LanguageContextProvider>
-               <LandmarkContextProvider>
+          <Route path='/landmarks' element={
+            <LanguageContextProvider>
+              <LandmarkContextProvider>
                 <CategoriesContextProvider>
                   <LandMarkCardPage />
-                  </CategoriesContextProvider>
-               </LandmarkContextProvider>
-             </LanguageContextProvider>
-          
+                </CategoriesContextProvider>
+              </LandmarkContextProvider>
+            </LanguageContextProvider>
+
           } />
 
           <Route path='/governorates' element={
 
-         <LanguageContextProvider>
-          <GovernorateContextProvider>
-          <LandmarkContextProvider>
-             <GovernmentCardPage />
-             </LandmarkContextProvider>
-            
-          </GovernorateContextProvider>
-          </LanguageContextProvider>
-          
-          } /> 
+            <LanguageContextProvider>
+              <GovernorateContextProvider>
+                <LandmarkContextProvider>
+                  <GovernmentCardPage />
+                </LandmarkContextProvider>
 
-         <Route path="/government/:id" element={
-             <LanguageContextProvider>
-                   <GovernorateContextProvider>
-                     <LandmarkContextProvider>
-                 
-                       <GovernmentInfoPage />
-                      
-                     </LandmarkContextProvider>
-                      </GovernorateContextProvider>
-                
-              </LanguageContextProvider>
-          
+              </GovernorateContextProvider>
+            </LanguageContextProvider>
+
           } />
 
-        <Route path="/landmark/:id" element={
-             <LanguageContextProvider>
-             <LandmarkContextProvider>
-              
-                   <LandMarkInfoPage />
-             </LandmarkContextProvider>
-             </LanguageContextProvider>
-    
-         } />
+          <Route path="/government/:id" element={
+            <LanguageContextProvider>
+              <GovernorateContextProvider>
+                <LandmarkContextProvider>
 
-        <Route path="/TourPackage" element={        
-          <TourPackageContextProvider>
-                <TourPackagesPage />
-          </TourPackageContextProvider>
-      } />
+                  <GovernmentInfoPage />
 
-        <Route path="/TourPackage/:id" element={  
-           <TourPackageContextProvider>
-          <TourPackagesInfoPage />
-          </TourPackageContextProvider>
-         } />
+                </LandmarkContextProvider>
+              </GovernorateContextProvider>
+
+            </LanguageContextProvider>
+
+          } />
+
+          <Route path="/landmark/:id" element={
+            <LanguageContextProvider>
+              <LandmarkContextProvider>
+
+                <LandMarkInfoPage />
+              </LandmarkContextProvider>
+            </LanguageContextProvider>
+
+          } />
+
+          <Route path="/TourPackage" element={
+            <TourPackageContextProvider>
+              <TourPackagesPage />
+            </TourPackageContextProvider>
+          } />
+
+          <Route path="/TourPackage/:id" element={
+            <TourPackageContextProvider>
+              <TourPackagesInfoPage />
+            </TourPackageContextProvider>
+          } />
 
 
- 
-      
+
+
           <Route path='/aboutus' element={<AboutusPage />} />
           <Route path='/dashboard' element={
             <AuthContextProvider>
@@ -170,6 +171,20 @@ const App = () => {
               </PrivateRoute>
             </AuthContextProvider>
           } />
+
+          {/* <Route path='/add_review' element={
+            <AuthContextProvider>
+              <PrivateRoute>
+                <LanguageContextProvider>
+                  <CategoriesContextProvider>
+                    <AlertContextProvider>
+                      <AddReview />
+                    </AlertContextProvider>
+                  </CategoriesContextProvider>
+                </LanguageContextProvider>
+              </PrivateRoute>
+            </AuthContextProvider>
+          } /> */}
           <Route
             path="*"
             element={<Navigate to="/" replace />}

@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import css from '../UploadPhoto/UploadPhoto.module.css';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import css from "../UploadPhoto/UploadPhoto.module.css";
 
 function UploadPhoto(props) {
   const [file, setFile] = useState(null);
+  const { onUpload, name, value } = props;
   const { t } = useTranslation();
 
   const handleFileChange = (event) => {
@@ -12,23 +13,39 @@ function UploadPhoto(props) {
 
   const handleUploadClick = () => {
     // handle upload logic here
-    props.onUpload(file);
+    onUpload(file);
     setFile(null);
   };
 
   return (
     <div className={css.container}>
       <label htmlFor="fileInput" className={css.label}>
-        {t('PhotoUpload.UploadPhoto')}
+        {t("PhotoUpload.UploadPhoto")}
       </label>
-      <input id="fileInput" type="file" accept="image/*" onChange={handleFileChange} className={css.input} />
+      <input
+        id="fileInput"
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+        className={css.input}
+        // value={value}
+        name={name}
+      />
       {file && (
         <div className={css.preview}>
-          <img src={URL.createObjectURL(file)} alt={file.name} className={css.image} />
+          <img
+            src={URL.createObjectURL(file)}
+            alt={file.name}
+            className={css.image}
+          />
         </div>
       )}
-      <button onClick={handleUploadClick} disabled={!file} className={css.button}>
-        {t('PhotoUpload.Upload')}
+      <button
+        onClick={handleUploadClick}
+        disabled={!file}
+        className={css.button}
+      >
+        {t("PhotoUpload.Upload")}
       </button>
     </div>
   );

@@ -11,6 +11,8 @@
   "readMore": "اظهار المحتوى",
   "landmark": "معلم سياحى",
   "create": "إنشاء {{instance}}",
+  "more": "المزيد من {{instance}}",
+  "filters": "الفلاتر",
   "ERA": [
     { "key": "قبل الميلاد (ق.م.)", "value": "BC" },
     { "key": "بعد الميلاد (م.)", "value": "AD" }
@@ -37,7 +39,7 @@
     "aboutus": "معلومات عنا",
     "contact": "تواصل معنا",
     "landmarks": "معالم سياحية",
-    "Tour Packages":"أسعار الرحلات"
+    "Tour Packages": "أسعار الرحلات"
   },
   "Map_section": {
     "welcome_message": " أهلا بكم فى مصر",
@@ -309,71 +311,63 @@
     ],
     "loading": "جارى التحميل.....",
     "submit": "إنشاء معلم سياحى"
-  }
+  },
 
-
-  ,"sideNavigation":{
-    "Filters":"بحث",
-    "Rate":"تقييم",
+  "sideNavigation": {
+    "Filters": "بحث",
+    "Rate": "تقييم",
     "Is Active": "نشط",
     "Active Only": "النشط فقط",
-    "Search By Name":"البحث بالاسم",
-    "Search":"بحث",
-    "Category":"الفئة",
-    "Type Category":"نوع المكان",
-    "All Categories":"كل الفئات"
+    "Search By Name": "البحث بالاسم",
+    "Search": "بحث",
+    "Category": "الفئة",
+    "Type Category": "نوع المكان",
+    "All Categories": "كل الفئات"
+  },
+  "LandMarksCards": {
+    "LandMarks": "المعالم السياحية",
+    "Read More": "اقرأ المزيد",
+    "From": "إنه"
+  },
 
+  "LandmarkInfo": {
+    "About": "معلومات ",
+    "area": "مساحته ",
+    "Locates": "عنوانه في ",
+    "founder ": " مؤسس المكان",
+    "KM": "متر مربع"
+  },
+
+  "LandmarkEvent": {
+    "LandMark Event": "الحدث",
+    "Event Ticket": "تذكرة الحدث",
+    "Ticket Price": "سعرالتذكرة",
+    "AM": "صباحا ",
+    "PM": "مساءا ",
+    "From": "من",
+    "To": "الى",
+    "EG": "جنية "
+  },
+
+  "GovernmentCards": {
+    "Governorates": "المحافظات ",
+    "Read More": "اقرأ المزيد"
+  },
+
+  "GovernmentInfo": {
+    "About": "معلومات ",
+    "area": "مساحته ",
+    "KM": "متر مربع",
+    "governor": "محافظ",
+    "Governorate": "محافظة",
+    "LandMarks Found in": "المعالم سياحية في"
+  },
+  "Gallery": {
+    "Gallery": "معرض الصور "
+  },
+
+  "LandmarkReviews": {
+    "Reviews": "النقد ",
+    "Rate": "تقييم "
   }
-  ,"LandMarksCards":{
-    "LandMarks":"المعالم السياحية",
-    "Read More":"اقرأ المزيد",
-    "From":"إنه"
-  
-  }
-
-  ,"LandmarkInfo":{
-    "About":"معلومات ",
-    "area":"مساحته ",
-    "Locates":"عنوانه في ",
-    "founder ":" مؤسس المكان",
-    "KM":"متر مربع"  
-    
-
-
-  }
-
-  ,"LandmarkEvent":{
-    "LandMark Event":"الحدث",
-    "Event Ticket":"تذكرة الحدث",
-    "Ticket Price":"سعرالتذكرة",
-    "AM":"صباحا ",
-    "PM":"مساءا ",
-    "From":"من",
-    "To":"الى",
-    "EG":"جنية "
-  }
-
-  ,"GovernmentCards":{
-    "Governorates":"المحافظات ",
-    "Read More":"اقرأ المزيد"
-  }
-
-  ,"GovernmentInfo":{
-    "About":"معلومات ",
-    "area":"مساحته ",
-    "KM":"متر مربع" ,
-    "governor":"محافظ",
-    "Governorate":"محافظة",
-    "LandMarks Found in":"المعالم سياحية في"
-  }
-  ,"Gallery":{
-    "Gallery":"معرض الصور "
-  }
-
-  ,"LandmarkReviews":{
-    "Reviews":"النقد ",
-    "Rate":"تقييم "
-  }
-
-
 }
