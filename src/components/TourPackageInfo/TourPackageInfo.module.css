@@ -1,0 +1,264 @@
+.pageTitle{
+  text-align: center;
+  color: var(--PrimaryColor);
+  font-size: 80px;
+}
+.contact_area {
+  width: 100%;
+  height: 200vh;
+  position: relative;
+}
+
+.contact {
+  position: relative;
+  max-width: 800px;
+  padding: 40px 20px;
+  overflow: hidden;
+  margin: 0 auto;
+  color: #1da1f2;
+}
+
+
+
+.contact .main {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.contact .main section {
+  border-radius: 5px;
+  float: left;
+  width: 100%;
+  background-color: var(--cardHover);
+}
+
+.contact .main .section .content {
+  float: left;
+  width: 100%;
+  padding: 20px 30px 50px 30px;
+  position: relative;
+  text-align: center;
+}
+
+
+
+.contact .main section .content .icon {
+  display: inline-block;
+  width: 140px;
+  border-radius: 50%;
+  justify-content: center;
+  color: var(--PrimaryColor);
+}
+
+
+.contact .main section .content aside {
+  float: left;
+  width: 100%;
+  color: var(--white);
+  margin-top: 10px;
+}
+
+
+
+.contact .main section .content aside p {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 160%;
+}
+
+
+
+
+.info{
+  text-align: left;
+  color: #080808;
+}
+
+
+
+
+
+.button {
+  position: absolute;
+  bottom: 0;
+  left: 42%;
+  border: 0;
+  width: 120px;
+  height: 48px;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 13px;
+  /*letter-spacing: .5px;*/
+  text-transform: uppercase;
+  margin-bottom: -24px;
+  margin-right: -100px;
+  transition-delay: .1s;
+  outline: none;
+  overflow: hidden;
+  z-index: 10;
+  font-family: inherit;
+  background-color: var(--PrimaryColor);
+  color: aliceblue;
+}
+
+.button :hover{
+  color: var(--PrimaryColor);
+}
+.span {
+  
+ 
+  transition-delay: .4s;
+  /*display: block;*/
+  width: 200px;
+ /* float: left;*/
+  padding: 15px 0px;
+}
+
+.svg {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+
+
+}
+
+.nav {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0px;
+}
+
+.active {
+  max-height: 600px;
+
+}
+.nav  p {
+    opacity: 1;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+    
+  }
+  
+  .gmail,
+  .facebook {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    background-color: var(--cardHover);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+
+  }
+
+  .gmail .clockicon,
+  .facebook .clockicon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--PrimaryColor);
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .gmail h1,
+  .facebook h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .gmail p,
+  .facebook p {
+    font-size: 14px;
+    color: #eb2f2f;
+    line-height: 1.5;
+  }
+
+
+  .contactContainer {
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .contactName {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .contactInfo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .contactField {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .contactField span {
+    margin-left: 5px;
+    font-size: 16px;
+    color: #888;
+  }
+
+
+  @media (max-width: 768px) {
+    .pageTitle {
+      font-size: 50px;
+    }
+    
+    .contact_area {
+      height: auto;
+    }
+    
+    .contact {
+      max-width: 100%;
+    }
+    
+    .contact .main section {
+      margin-bottom: 30px;
+    }
+    
+    .contact .main section .content {
+      padding: 20px;
+    }
+    
+    .contact .main section .content .icon {
+      width: 100px;
+    }
+    
+    .button {
+      left: 50%;
+      margin-right: -60px;
+    }
+    
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .gmail,
+    .facebook {
+      width: 90%;
+      margin: 10px 0;
+    }
+  }

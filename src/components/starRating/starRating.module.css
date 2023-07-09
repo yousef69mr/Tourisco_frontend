@@ -1,0 +1,33 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.star_rating {
+    display: inline-block;
+    padding-left: 10px;
+  }
+  
+  .star_rating .fa {
+    font-size: inherit;
+  }
+ 
+ 
+  .star_rating .star_icon {
+    font-size: 1rem;
+    color: #bdbaba;
+    padding-top: 3px;
+  }
+  
+  .star_rating .star_icon.checked {
+    color: #f4c150;
+  }
+
+
+  @media (max-width: 768px) {
+    .star_rating {
+      padding-left: 0;
+      margin-top: 5px;
+    }
+    
+    .star_rating .star_icon {
+      font-size: 0.8rem;
+    }
+  }
