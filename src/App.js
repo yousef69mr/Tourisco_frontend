@@ -10,6 +10,17 @@ import Footer from './components/Footer/Footer';
 import ScrollToTop from "react-scroll-to-top";
 
 import BackGroundParticles from './components/BackGroundParticles/BackGroundParticles';
+//import LandmarkContextProvider from './contexts/LandmarkContext';
+import LandMarkCardPage from './Pages/LandMarkCardPage';
+import LandMarkInfoPage from './Pages/LandMarkInfoPage';
+import GovernmentCardPage from './Pages/GovCardPage';
+import GovernmentInfo from './components/GovernmentInfo/GovernmentInfo';
+import GovernorateContextProvider from './contexts/GovernorateContext';
+import GovernmentInfoPage from './Pages/GovInfoPage';
+import TourPackageContextProvider from './contexts/TourPackageContext';
+import TourPackagesPage from './Pages/TourPackagesPage';
+import TourPackagesInfoPage from './Pages/TourPackageInfoPage';
+//import CategoriesContextProvider from './contexts/CategoriesContext';
 
 //dynamic import
 const PrivateRoute = lazy(() => import('./utils/PrivateRoute'));
@@ -86,6 +97,71 @@ const App = () => {
               </PrivateRoute>
             </AuthContextProvider>
           } />
+
+
+<Route path='/landmarks' element={
+             <LanguageContextProvider>
+               <LandmarkContextProvider>
+                <CategoriesContextProvider>
+                  <LandMarkCardPage />
+                  </CategoriesContextProvider>
+               </LandmarkContextProvider>
+             </LanguageContextProvider>
+          
+          } />
+
+          <Route path='/governorates' element={
+
+         <LanguageContextProvider>
+          <GovernorateContextProvider>
+          <LandmarkContextProvider>
+             <GovernmentCardPage />
+             </LandmarkContextProvider>
+            
+          </GovernorateContextProvider>
+          </LanguageContextProvider>
+          
+          } /> 
+
+         <Route path="/government/:id" element={
+             <LanguageContextProvider>
+                   <GovernorateContextProvider>
+                     <LandmarkContextProvider>
+                 
+                       <GovernmentInfoPage />
+                      
+                     </LandmarkContextProvider>
+                      </GovernorateContextProvider>
+                
+              </LanguageContextProvider>
+          
+          } />
+
+        <Route path="/landmark/:id" element={
+             <LanguageContextProvider>
+             <LandmarkContextProvider>
+              
+                   <LandMarkInfoPage />
+             </LandmarkContextProvider>
+             </LanguageContextProvider>
+    
+         } />
+
+        <Route path="/TourPackage" element={        
+          <TourPackageContextProvider>
+                <TourPackagesPage />
+          </TourPackageContextProvider>
+      } />
+
+        <Route path="/TourPackage/:id" element={  
+           <TourPackageContextProvider>
+          <TourPackagesInfoPage />
+          </TourPackageContextProvider>
+         } />
+
+
+ 
+      
           <Route path='/aboutus' element={<AboutusPage />} />
           <Route path='/dashboard' element={
             <AuthContextProvider>

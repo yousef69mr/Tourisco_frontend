@@ -106,15 +106,22 @@ const Navbar = (props) => {
               </NavLink>
             </li>
             <li className={css.navItem} onClick={removeNav}>
-              <NavLink to={"#"} className={css.navLink}>
+              <NavLink to={"/governorates"} className={css.navLink}>
                 {t("navbar.governorates")}
               </NavLink>
             </li>
             <li className={css.navItem} onClick={removeNav}>
-              <NavLink to={"#"} className={css.navLink}>
+              <NavLink to={"/landmarks"} className={css.navLink}>
                 {t("navbar.landmarks")}
               </NavLink>
             </li>
+
+            <li className={css.navItem} onClick={removeNav}>
+              <NavLink to={"/TourPackage"} className={css.navLink}>
+                     {t("navbar.Tour Packages")}
+              </NavLink>
+            </li>
+
 
             <li className={css.navItem} onClick={removeNav}>
               <NavLink to={"/create_package"} className={css.navLink}>

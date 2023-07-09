@@ -35,7 +35,8 @@
     "recomendations": "Customize Tour",
     "aboutus": "About Us",
     "contact": "Contact",
-    "landmarks": "Landmarks"
+    "landmarks": "Landmarks",
+    "Tour Packages":"Tour Packages"
   },
   "Map_section": {
     "welcome_message": "Welcome To Egypt",
@@ -310,5 +311,72 @@
     ],
     "loading": "Loading...",
     "submit": "Create Landmark"
+  }
+
+  ,"sideNavigation":{
+    "Filters":"Filters",
+    "Rate":"Rate",
+    "Is Active": "Is Active",
+    "Active Only": "Active Only",
+    "Search By Name":"Search By Name",
+    "Search":"Search",
+    "Category":"Category",
+    "Type Category":"Type Category",
+    "All Categories":"All Categories"
+  }
+
+  ,"LandMarksCards":{
+    "LandMarks":"LandMarks ",
+    "Read More":"Read More",
+    "From":"From"
+
+  
+  }
+
+  ,"LandmarkInfo":{
+    "About":"About ",
+    "area":"area",
+    "Locates":"Locates",
+    "founder ":"founder ",
+    "KM":"KM" 
+    
+
+
+  }
+
+
+
+  ,"LandmarkEvent":{
+    "LandMark Event":"LandMark Event",
+    "Event Ticket":"Event Ticket",
+    "Ticket Price":"Ticket Price",
+    "AM":"AM",
+    "PM":"PM",
+    "From":"From",
+    "To":"To",
+    "EG":"EG "
+  }
+  ,"GovernmentCards":{
+    "Governorates":"Governorates ",
+    "Read More":"Read More"
+    
+  
+  }
+
+  ,"GovernmentInfo":{
+    "About":"About ",
+    "area":"area ",
+    "KM":"KM" ,
+    "governor":"governor",
+    "Governorate":"Governorate",
+    "LandMarks Found in":"LandMarks Found in"
+  }
+  ,"Gallery":{
+    "Gallery":"Gallery "
+  }
+
+  ,"LandmarkReviews":{
+    "Reviews":"Reviews ",
+    "Rate":"Rate "
   }
 }
