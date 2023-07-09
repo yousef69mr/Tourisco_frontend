@@ -173,14 +173,14 @@ const MultiStepForm = (props) => {
   });
 
   const handleAddItem = (name) => {
-    const newItem = formik.initialValues[name][0];
+    // const newItem = formik.initialValues[name][0];
 
-    const newArray = [...formik.values[name], newItem];
-    formik.setFieldValue(name, newArray);
-    // formik.setFieldValue(name, [
-    //   ...formik.values[name],
-    //   ...formik.initialValues[name],
-    // ]);
+    // const newArray = [...formik.values[name], newItem];
+    // formik.setFieldValue(name, newArray);
+    formik.setFieldValue(name, [
+      ...formik.values[name],
+      ...formik.initialValues[name],
+    ]);
     // formik.handlePush();
     // alert(JSON.stringify(formik.values[name]));
   };
@@ -403,7 +403,7 @@ const MultiStepForm = (props) => {
                   </Button>
                 </Box>
                 {formik.values[name].length > 0 &&
-                  formik.values[name]?.map((array, i) => (
+                  formik.values[name]?.map((object, i) => (
                     <Box className="row" padding={3} key={i}>
                       {fields.map((input, j) => (
                         <Container sx={{ mt: 1, mb: 1 }} key={j}>
@@ -416,7 +416,7 @@ const MultiStepForm = (props) => {
                             // variant="outlined"
                             autoFocus={input.autoFocus}
                             type={input.type}
-                            value={formik.values[input.name]}
+                            value={object[input.name]}
                             // onChange={
                             //   control === "select"
                             //     ? (e, option) =>

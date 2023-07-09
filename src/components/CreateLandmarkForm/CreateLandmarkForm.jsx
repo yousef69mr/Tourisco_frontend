@@ -380,23 +380,22 @@ const CreateLandmarkForm = (props) => {
         },
       ],
       validationSchema: object({
-        budget: number()
-          .required(t("form.requiredField"))
-          .min(
-            "10",
-            t("form.minLength", {
-              field: t(`${formName}.steps.2.fields.0.label`),
-              length: 10,
-            })
-          )
-          .max(
-            "10000",
-            t("form.maxLength", {
-              field: t(`${formName}.steps.2.fields.0.label`),
-              length: 10000,
-            })
-          ),
-       
+        tickets: array().of(
+          object().shape({
+            ticket_title: string().required(t("form.requiredField")),
+            price: number()
+              .required(t("form.requiredField"))
+              .min(
+                0,
+                t("form.minLength", {
+                  field: t(`${formName}.steps.3.fields.0.1.label`),
+                  length: 0,
+                })
+              ),
+
+            ticket_class_category: number().required(t("form.requiredField")),
+          })
+        ),
       }),
     },
   ];
@@ -425,7 +424,7 @@ const CreateLandmarkForm = (props) => {
     startDate: "",
     endDate: "",
 
-    tickets: [{ ticket_title: "", price: null, ticket_class_category: null }],
+    tickets: [{ ticket_title: "", price: 0, ticket_class_category: "" }],
   };
   const submitfunction = async (values, { setSubmitting, setErrors }) => {
     // alert(JSON.stringify(values));
@@ -439,7 +438,7 @@ const CreateLandmarkForm = (props) => {
       // alert(typeof values.endDate);
       lanmdarkFormData.append(
         "name",
-        capitalizeString(values.landmark_title).replaceAll(" ", "_")
+        capitalizeString(values.landmark_title).trim().replaceAll(" ", "_")
       );
       lanmdarkFormData.append("title", values.landmark_title);
 
@@ -483,7 +482,7 @@ const CreateLandmarkForm = (props) => {
       const eventFormData = new FormData();
       eventFormData.append(
         "name",
-        capitalizeString(values.event_title).replaceAll(" ", "_")
+        capitalizeString(values.event_title).trim().replaceAll(" ", "_")
       );
       eventFormData.append("title", values.event_title);
       eventFormData.append("openTime", values.openTime);
@@ -523,14 +522,18 @@ const CreateLandmarkForm = (props) => {
       // alert(JSON.stringify(landmarkData[0]));
 
       const ticketsPromises = values.tickets?.map((ticket) => {
+        console.log(ticket);
         const ticketFormData = new FormData();
         ticketFormData.append(
           "name",
-          capitalizeString(ticket?.ticket_title).replaceAll(" ", "_")
+          capitalizeString(ticket?.ticket_title).trim().replaceAll(" ", "_")
         );
         ticketFormData.append("title", ticket?.ticket_title);
         ticketFormData.append("price", ticket?.price);
-        ticketFormData.append("ticketClassObject", ticket.class);
+        ticketFormData.append(
+          "ticketClassObject",
+          ticket?.ticket_class_category
+        );
         ticketFormData.append("eventObject", eventFormData[0]?.event?.id);
         api_root.apiToken.post(
           `tickets/${eventData[0]?.event?.id}/`,
@@ -542,13 +545,13 @@ const CreateLandmarkForm = (props) => {
       });
 
       const ticketsResponses = await Promise.all(ticketsPromises);
-      const eventTickets = ticketsResponses?.map((response) => response.data);
+      const eventTickets = ticketsResponses?.map((response) => response?.data);
 
-      alert(
-        t("form.createdMessage", {
-          instance: eventTickets[0]?.title,
-        })
-      );
+      // alert(
+      //   t("form.createdMessage", {
+      //     instance: eventTickets[0]?.title,
+      //   })
+      // );
 
       setSubmitting(false);
       // setCreating(false);

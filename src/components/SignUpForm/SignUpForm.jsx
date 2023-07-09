@@ -33,6 +33,7 @@ const SignUpForm = (props) => {
       phone: "",
       phoneCode: "",
       gender: "",
+      birthdate: null,
     }
   );
 
@@ -98,6 +99,16 @@ const SignUpForm = (props) => {
       required: true,
     },
     {
+      id: 8,
+      tag: "input",
+      type: "date",
+      name: "birthdate",
+      // pattern: ".*\\S.*",
+      flex: 1,
+      unique: false,
+      required: true,
+    },
+    {
       id: 7,
       tag: "input",
       type: "tel",
@@ -130,6 +141,7 @@ const SignUpForm = (props) => {
       phone: `${state.phoneCode}${state.phone}`,
       nationality: state.nationality,
       gender: state.gender,
+      birth_date: state.birthdate,
     };
 
     api.api
@@ -137,10 +149,11 @@ const SignUpForm = (props) => {
       .then((response) => {
         if (response.status === 201) {
           console.log("created");
-          AlertHandler("UPDATE", {
-            message: "User Created Successfully :)",
-            alertTheme: "success",
-          });
+          // AlertHandler("UPDATE", {
+          //   message: "User Created Successfully :)",
+          //   alertTheme: "success",
+          // });
+          alert("created successfully");
         }
       })
       .catch((err) => console.log(err));
