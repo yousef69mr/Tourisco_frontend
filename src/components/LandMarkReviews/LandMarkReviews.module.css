@@ -1,129 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-
-
-
-.container{
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
-    margin-bottom: 60px;
+.container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
 }
 
-.board{
-    max-width: 987px;
-    width: 100%;
-   /* background-color: var(--PrimaryColor);*/
-    text-align: center;
-    border-radius: 8px;
-    padding: 4em 0;
+.board {
+  max-width: 987px;
+  width: 100%;
+  /* background-color: var(--PrimaryColor);*/
+  text-align: center;
+  border-radius: 8px;
+  padding: 4em 0;
 }
 
-.text_light{
-    color: var(--PrimaryColor);
-    margin-bottom: 15px;
-    font-size: 90px;
+.text_light {
+  color: var(--PrimaryColor);
+  margin-bottom: -3rem;
+  margin-top: -1rem;
+  font-size: 90px;
 }
 
 .swiper {
-    width: 600px;
-    height: auto;
-  }
-
-.swiper .swiper_slide .flex{
-    margin: 3em 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 600px;
+  height: auto;
 }
 
-.swiper .swiper_slide .user{
-    background-color: var(--color-light);
-    padding: 1.5em 2em;
-    width: 50%;
-    border-radius: 5px;
-    font-size: .9em;
-    position: relative;
+.swiper .swiper_slide .flex {
+  margin: 3em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.swiper .swiper_slide .user::after{
-    content: '';
-    position: absolute;
-    bottom: -19px;
-    left: 45%;
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid var(--color-light);
-    z-index: -99;
+.swiper .swiper_slide .user {
+  background-color: var(--color-light);
+  padding: 1.5em 2em;
+  width: 50%;
+  border-radius: 5px;
+  font-size: 0.9em;
+  position: relative;
 }
 
-
-.swiper .profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1em;
+.swiper .swiper_slide .user::after {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 45%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--color-light);
+  z-index: -99;
 }
 
-.swiper .profile img{
-    width: 120%;
-    border-radius: 50%;
-    border: 5px solid var(--PrimaryColor);
-    margin: 10px 0;
+.swiper .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
-/*.swiper .profile > a{
-    text-decoration: none;
-    color: var(--color-light);
-}*/
+.swiper .profile img {
+  width: 110%;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-color: var(--PrimaryColor);
+  /*margin: 10px 0;*/
+}
 
-/*.swiper .profile > span{
-    color: var(--textColor);
-    font-size: .8em;
-}*/
-
-.swiper .swiper_button_prev, .swiper_button_next{
+/*.swiper .swiper_button_prev, .swiper_button_next{
     color: var(--textColor);
     display: none;
     
-} 
+} */
 
-.reviews{
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    color: var(--textColor);
+.reviews {
+  margin-top: 1rem;
+  margin-bottom: -2rem;
+  color: var(--textColor);
+  font-size: 30px;
 }
 @media (min-width: 320px) {
-    .board{
-        width: auto;
-    }
+  .board {
+    width: auto;
+  }
 
-    .swiper {
-        width: 320px;
-      }
+  .swiper {
+    width: 320px;
+  }
 
-      .board > .text_light{
-          padding: 0 2em;
-      }
+  .board > .text_light {
+    padding: 0 2em;
+  }
 }
 
 @media (min-width: 768px) {
-    .board{
-        width: 100%;
-    }
+  .board {
+    width: 100%;
+  }
 
-    .swiper {
-        width: 600px;
-      }
+  .swiper {
+    width: 600px;
+  }
 
-    .swiper .swiper_button_prev, .swiper_button_next{
-        display: initial;
-    }
-
- 
+  .swiper .swiper_button_prev,
+  .swiper_button_next {
+    display: initial;
+  }
 }

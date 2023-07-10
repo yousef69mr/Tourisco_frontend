@@ -1,4 +1,5 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LandmarkReviews from "../LandMarkReviews/LandMarkReviews";
 import LandmarkContextProvider from "../../contexts/LandmarkContext";
@@ -6,15 +7,15 @@ import TicketContextProvider from "../../contexts/TicketContext";
 import LandmarkEventContextProvider from "../../contexts/LandmarkEventContext";
 import { backendBaseURL } from "../../axios";
 import { useLandmarkContext } from "../../contexts/LandmarkContext";
-import Gallery from "../LandMarkGallery/LandMarkGallery";
-import { useEffect, useState } from "react";
+// import Gallery from "../LandMarkGallery/LandMarkGallery";
+
 import api_root from "../../axios";
 import LandmarkEvent from "../LandMarkEvent/LandMarkEvent";
 import css from "../LandMarkInfo/LanMarkInfo.module.css";
 
 function LandmarkInfo() {
-  const location = useLocation();
-  const specificlandmark = location.state;
+  // const location = useLocation();
+  // const specificlandmark = location.state;
   const { id } = useParams();
   const { t } = useTranslation();
 
@@ -28,11 +29,11 @@ function LandmarkInfo() {
     );
     const UpdateViews = async () => {
       try {
-        const UpdateViewsPromis = await api_root.api.post(
-          `increace_landmark_views/${filteredLandmark?.landmark?.id}/`
+        const UpdateViewsPromise = await api_root.api.post(
+          `increace_landmark_views/${id}/`
         );
-        if (UpdateViewsPromis.state !== 202) {
-          throw new Error(UpdateViewsPromis.statusText);
+        if (UpdateViewsPromise.state !== 202) {
+          throw new Error(UpdateViewsPromise.statusText);
         }
       } catch (error) {
         console.log(error);
@@ -40,29 +41,27 @@ function LandmarkInfo() {
     };
 
     if (filteredLandmark) {
-      UpdateViews();
       setSelectedLandmark(filteredLandmark);
+      UpdateViews();
     } else {
       setSelectedLandmark(null);
     }
-  }, [landmarks, specificlandmark, id]);
+  }, [landmarks, id]);
 
-  {
-    console.log("selectedlandmark", selectedLandmark);
-  }
+  console.log("selectedlandmark", selectedLandmark);
 
   return (
     <div className={css.LandMarkInfo_Body}>
       {selectedLandmark ? (
         <>
-          <h1 className={css.page_title}>{selectedLandmark.title}</h1>
+          <h1 className={css.page_title}>{selectedLandmark?.title}</h1>
           <div className={css.container}>
             <div className={css.image_container}>
               <figure className={css.swing}>
                 <div className={css.image}>
                   <img
-                    src={backendBaseURL + selectedLandmark.landmark.image}
-                    alt={selectedLandmark.title}
+                    src={backendBaseURL + selectedLandmark?.landmark?.image}
+                    alt={selectedLandmark?.title}
                   />
                 </div>
               </figure>
@@ -74,28 +73,28 @@ function LandmarkInfo() {
               {selectedLandmark.description}
               <span>
                 {" "}
-                {t("LandmarkInfo.area")} {selectedLandmark.landmark.area}{" "}
+                {t("LandmarkInfo.area")} {selectedLandmark?.landmark?.area}{" "}
                 {t("LandmarkInfo.KM")}{" "}
               </span>
               <span>
-                {t("LandmarkInfo.founder ")} {selectedLandmark.founder}{" "}
+                {t("LandmarkInfo.founder ")} {selectedLandmark?.founder}{" "}
               </span>
               <span>
-                {t("LandmarkInfo.Locates")} {selectedLandmark.address}
+                {t("LandmarkInfo.Locates")} {selectedLandmark?.address}
               </span>
             </p>
           </div>
           <LandmarkContextProvider>
             <LandmarkEventContextProvider>
               <TicketContextProvider>
-                <LandmarkEvent id={selectedLandmark.landmark.id} />
+                <LandmarkEvent id={selectedLandmark?.landmark?.id} />
               </TicketContextProvider>
             </LandmarkEventContextProvider>
           </LandmarkContextProvider>
 
-          {/* <LandmarkReviews/>*/}
+          <LandmarkReviews landmark={selectedLandmark} />
 
-          {/*<Gallery id={selectedLandmark.landmark.id} />*/}
+          {/* <Gallery id={selectedLandmark?.landmark?.id} /> */}
         </>
       ) : (
         <p>No landmarks match the selected landmark.</p>

@@ -127,7 +127,7 @@ const CreateLandmarkForm = (props) => {
         },
       ],
       validationSchema: object({
-        landmark_title: string().required(t("form.requiredField")),
+        landmark_title: string().required(t("form.requiredField")).max(100),
         image: mixed()
           .required(t("form.requiredField"))
           .test("fileType", t("form.invalidFileType"), function (value) {
@@ -458,6 +458,10 @@ const CreateLandmarkForm = (props) => {
       lanmdarkFormData.append("height", values.height);
       lanmdarkFormData.append("area", values.area);
       lanmdarkFormData.append("foundationDate", values.foundationDate);
+      lanmdarkFormData.append(
+        "tourismCategoryObject",
+        values.tourism_categories[0]
+      );
 
       // alert(JSON.stringify(formData));
       const createLandmarkPromise = await api_root.apiToken.post(
@@ -557,7 +561,7 @@ const CreateLandmarkForm = (props) => {
       // );
 
       setSubmitting(false);
-      navigate(`landamrk/${landmarkData[0]?.landmark?.id}`);
+      navigate(`/landmark/${landmarkData[0]?.landmark?.id}`);
       // setCreating(false);
     } catch (error) {
       if (axios.isCancel(error)) {

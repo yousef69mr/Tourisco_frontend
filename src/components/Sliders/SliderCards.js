@@ -104,7 +104,7 @@ export const LandmarkCard = (props) => {
                             }
                         </Box>
                     </Box>}
-                <Button className="btn border-radius" sx={{ width: '100%' }} onClick={() => navigate(`/landmarks/${object?.landmark?.id}`)}>{t('readMore')}</Button>
+                <Button className="btn border-radius" sx={{ width: '100%' }} onClick={() => navigate(`/landmark/${object?.landmark?.id}`)}>{t('readMore')}</Button>
             </Box>
         </Box >
     )

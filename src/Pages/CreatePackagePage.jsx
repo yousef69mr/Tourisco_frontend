@@ -232,13 +232,27 @@ const CreatePackagePage = () => {
 
       alert(
         t("form.createdMessage", {
-          instance: createPackageData?.title,
+          instance: "package",
         })
       );
 
       setSubmitting(false);
       navigate(`/TourPackage/${createPackageData?.id}`);
       // setCreating(false);
+      window.location.reload(true);
+
+      // setTimeout(() => {
+      //   alert(
+      //     t("form.createdMessage", {
+      //       instance: "package",
+      //     })
+      //   );
+
+      //   setSubmitting(false);
+      //   navigate(`/TourPackage/${13}`);
+      //   // setCreating(false);
+      //   window.location.reload(true);
+      // }, 5000);
     } catch (error) {
       if (axios.isCancel(error)) {
         console.error("cancelled");

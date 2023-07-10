@@ -14,13 +14,13 @@ import BackGroundParticles from './components/BackGroundParticles/BackGroundPart
 import LandMarkCardPage from './Pages/LandMarkCardPage';
 import LandMarkInfoPage from './Pages/LandMarkInfoPage';
 import GovernmentCardPage from './Pages/GovCardPage';
-import GovernmentInfo from './components/GovernmentInfo/GovernmentInfo';
+// import GovernmentInfo from './components/GovernmentInfo/GovernmentInfo';
 import GovernorateContextProvider from './contexts/GovernorateContext';
 import GovernmentInfoPage from './Pages/GovInfoPage';
 import TourPackageContextProvider from './contexts/TourPackageContext';
 import TourPackagesPage from './Pages/TourPackagesPage';
 import TourPackagesInfoPage from './Pages/TourPackageInfoPage';
-import AddReview from './components/AddReview/AddReview';
+// import AddReview from './components/AddReview/AddReview';
 //import CategoriesContextProvider from './contexts/CategoriesContext';
 
 //dynamic import

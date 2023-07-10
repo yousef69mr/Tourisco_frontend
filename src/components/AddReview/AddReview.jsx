@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import css from "./AddReview.module.css";
 import axios from "axios";
@@ -10,12 +10,8 @@ import { useFormik } from "formik";
 function AddReview(props) {
   // const [rating, setRating] = useState(0);
   // const [comment, setComment] = useState("");
-  // const {landmark_id} = props
+  // const { landmark_id } = props;
   const { t } = useTranslation();
-
-  const onUpload = useCallback((files) => {
-    formik.setFieldValue("image_list", [...formik.values.image_list, files]);
-  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -88,6 +84,13 @@ function AddReview(props) {
       };
     },
   });
+
+  const onUpload = useCallback(
+    (files) => {
+      formik.setFieldValue("image_list", [...formik.values.image_list, files]);
+    },
+    [formik]
+  );
   // const handleSubmit = async (event) => {
   //   // event.preventDefault();
   //   alert(JSON.stringify(event));

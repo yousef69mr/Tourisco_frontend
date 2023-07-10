@@ -20,15 +20,12 @@ function LandMarksCards() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchQuerycategory, setSearchQuerycategory] = useState("");
 
-  {
-    /*console.log(landmarks)*/
-  }
   useEffect(() => {
     async function fetchCategories() {
       setCategories(tourismCategories);
     }
     fetchCategories();
-  }, []);
+  }, [tourismCategories]);
 
   const navigate = useNavigate();
   const handleLandmarkClick = (landmark) => {
@@ -73,7 +70,7 @@ function LandMarksCards() {
       ) : null}
       {filteredLandmarks && filteredLandmarks.length > 0 ? (
         <div className={css.cards_container}>
-          {filteredLandmarks.map((landmark, index) => (
+          {filteredLandmarks?.map((landmark, index) => (
             <React.Fragment key={landmark.id}>
               <div className={css.flip_card}>
                 <div className={css.flip_card_inner}>
