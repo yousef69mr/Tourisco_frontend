@@ -3,9 +3,9 @@ import axios from "axios";
 
 
 
-export const backendBaseURL = process.env.BACKEND_URL;
+export const backendBaseURL = process.env.BACKEND_URL ?? 'http://127.0.0.1:8000';
 // export const backendBaseURL = "http://127.0.0.1:8000";
-export const backendAPI = backendBaseURL.concat("/api/");
+export const backendAPI = backendBaseURL?.concat("/api/");
 
 
 export const authTokens = JSON.parse(localStorage.getItem('authTokens'))
