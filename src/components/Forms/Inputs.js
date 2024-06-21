@@ -428,7 +428,7 @@ export function SelectInput(props) {
 
 
 export function RadioButtons(props) {
-    const { label, name, options, dir, error, errorText, helperText, required, selected, ...rest } = props
+    const { label, name, options, dir, error, errorText, helperText, required, selected, setfieldvalue, ...rest } = props
     // const direction = dir === "row" ? row : col
     return (
         <FormControl fullWidth className="inputField">

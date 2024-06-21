@@ -39,7 +39,7 @@ const StandardForm = (props) => {
     );
   };
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onReset={formik.handleReset} onSubmit={formik.handleSubmit}>
       <Box sx={{ width: "100%", margin: "1rem 0rem" }}>
         {inputs?.fields.map(
           (
@@ -196,12 +196,12 @@ const StandardForm = (props) => {
                   </Button>
                 </Box>
                 {formik.values[name].length > 0 &&
-                  formik.values[name]?.map((array, i) => (
+                  formik.values[name]?.map((object, i) => (
                     <Box className="row" padding={3} key={i}>
                       {fields.map((input, j) => (
                         <Container sx={{ mt: 1, mb: 1 }} key={j}>
                           <FormikController
-                            name={`${name}[${index}].${input.name}`}
+                            name={`${name}.${i}.${input.name}`}
                             label={t(
                               `${formName}.steps.${activeStep}.fields.${index}.fields.${j}.label`
                             )}
@@ -209,7 +209,7 @@ const StandardForm = (props) => {
                             // variant="outlined"
                             autoFocus={input.autoFocus}
                             type={input.type}
-                            value={formik.values[input.name]}
+                            value={formik.values[name][i][input.name]}
                             // onChange={
                             //   control === "select"
                             //     ? (e, option) =>

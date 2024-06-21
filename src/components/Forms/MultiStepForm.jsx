@@ -203,12 +203,18 @@ const MultiStepForm = (props) => {
   const isLastStep = activeStep === steps.length - 1;
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onReset={formik.handleReset} onSubmit={formik.handleSubmit}>
       <Stepper
         sx={{
           width: "100%",
           "& .MuiOutlinedInput-notchedOutline": {
             borderColor: "var(--textColor)", // change the border color
+          },
+          "& .MuiStepLabel-label.Mui-completed": {
+            color: "var(--textColor)",
+            textDecoration: "line-through",
+            textDecorationThickness: "1.3px",
+            textDecorationColor: "var(--PrimaryColor)",
           },
           "& .MuiStepLabel-label.Mui-completed": {
             color: "var(--textColor)",
@@ -408,7 +414,7 @@ const MultiStepForm = (props) => {
                       {fields.map((input, j) => (
                         <Container sx={{ mt: 1, mb: 1 }} key={j}>
                           <FormikController
-                            name={`${name}[${index}].${input.name}`}
+                            name={`${name}.${i}.${input.name}`}
                             label={t(
                               `${formName}.steps.${activeStep}.fields.${index}.fields.${j}.label`
                             )}
@@ -416,7 +422,7 @@ const MultiStepForm = (props) => {
                             // variant="outlined"
                             autoFocus={input.autoFocus}
                             type={input.type}
-                            value={object[input.name]}
+                            value={formik.values[name][i][input.name]}
                             // onChange={
                             //   control === "select"
                             //     ? (e, option) =>

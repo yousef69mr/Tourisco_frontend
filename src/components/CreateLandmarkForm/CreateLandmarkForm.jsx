@@ -554,11 +554,11 @@ const CreateLandmarkForm = (props) => {
       const ticketsResponses = await Promise.all(ticketsPromises);
       const eventTickets = ticketsResponses?.map((response) => response?.data);
 
-      // alert(
-      //   t("form.createdMessage", {
-      //     instance: eventTickets[0]?.title,
-      //   })
-      // );
+      alert(
+        t("form.createdMessage", {
+          instance: eventTickets[0]?.title,
+        })
+      );
 
       setSubmitting(false);
       navigate(`/landmark/${landmarkData[0]?.landmark?.id}`);
