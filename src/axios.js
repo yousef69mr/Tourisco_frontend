@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 
-export const backendBaseURL = process.env.BACKEND_URL ?? 'http://127.0.0.1:8000';
+export const backendBaseURL = process.env.BACKEND_URL;
 // export const backendBaseURL = "http://127.0.0.1:8000";
 export const backendAPI = backendBaseURL?.concat("/api/");
 
